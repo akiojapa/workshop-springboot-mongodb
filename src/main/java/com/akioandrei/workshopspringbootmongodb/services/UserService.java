@@ -1,0 +1,20 @@
+package com.akioandrei.workshopspringbootmongodb.services;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.akioandrei.workshopspringbootmongodb.domain.User;
+import com.akioandrei.workshopspringbootmongodb.repository.UserRepository;
+
+@Service
+public class UserService {
+	
+	@Autowired
+	private UserRepository repo;
+	
+	public List<User> findAll(){
+		return repo.findAll();		
+	}
+}
