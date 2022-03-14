@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Configuration;
 
 import com.akioandrei.workshopspringbootmongodb.domain.Post;
 import com.akioandrei.workshopspringbootmongodb.domain.User;
+import com.akioandrei.workshopspringbootmongodb.dto.AuthorDTO;
 import com.akioandrei.workshopspringbootmongodb.repository.PostRepository;
 import com.akioandrei.workshopspringbootmongodb.repository.UserRepository;
 
@@ -35,14 +36,23 @@ public class Instantiation implements CommandLineRunner {
 		User akio = new User(null, "Akio Andrei", "akioandrei@gmail.com");
 		User maike = new User(null, "Maikola Snow", "maikola@gmail.com");
 		User leoni = new User(null, "Leoni", "leoni@gmail.com");
+		User pedrin = new User(null, "Zé Ruelinha", "zeruela@gmail.com");
+		User pedrao = new User(null, "Pedro Gaio", "pedrogalhado@gmail.com");
 		
-		Post post1 = new Post(null, sdf.parse("21/03/2022"), "Partiu viagem", "Vou viajar para Camburiú", akio);
-		Post post2 = new Post(null, sdf.parse("23/03/2022"), "Bom dia", "Olha meu gato", akio);
+		userRepository.saveAll(Arrays.asList(akio,maike,leoni,pedrin,pedrao)); 
 		
 		
 		
-		userRepository.saveAll(Arrays.asList(akio,maike,leoni));
+		Post post1 = new Post(null, sdf.parse("21/03/2022"), "Partiu viagem", "Vou viajar para Camburiú", new AuthorDTO(akio));
+		Post post2 = new Post(null, sdf.parse("23/03/2022"), "Bom dia", "Olha meu gato", new AuthorDTO(akio));
+		
+		
+		
+		
 		postRepository.saveAll(Arrays.asList(post1, post2));
+		
+		akio.getPosts().addAll(Arrays.asList(post1, post2));
+		userRepository.save(akio);
 		
 		
 	}
