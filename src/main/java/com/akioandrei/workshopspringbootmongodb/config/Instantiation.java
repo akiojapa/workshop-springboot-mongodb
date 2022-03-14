@@ -36,7 +36,7 @@ public class Instantiation implements CommandLineRunner {
 		
 		User akio = new User(null, "Akio Andrei", "akioandrei@gmail.com");
 		User maike = new User(null, "Maikola Snow", "maikola@gmail.com");
-		User leoni = new User(null, "Leoni", "leoni@gmail.com");
+		User leoni = new User(null, "Leoni Zilli", "leoni@gmail.com");
 		User pedrin = new User(null, "Zé Ruelinha", "zeruela@gmail.com");
 		User pedrao = new User(null, "Pedro Gaio", "pedrogalhado@gmail.com");
 		
