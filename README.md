@@ -43,6 +43,10 @@ Além da opção de deletar, atualizar e criar novos usuários, posts ou coment�
 <br>Port: 27017
 <br>Os outros campos deixar como o padrão.
 
+`MongoCompass #2:` Então crie uma nova base de dados selecionando "create database" então coloque nos campos os seguintes procedimentos:
+<br> Database name: workshop-mongo
+<br> Collection name: user
+
 `Iniciando o Sistema:`Após isso execute o programa selecionando o caminho do repositório que foi criado:
 
 workshop-springboot-mongodb/src/main/java/com/akioandrei/workshopspringbootmongodb/WorkshopSpringbootMongodbApplication.java
